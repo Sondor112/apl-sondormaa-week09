@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int r, c;
+    scanf("%d %d", &r, &c);
+    
+    int m[10][10];
+    int max;
+    int max_r = 0;
+    int max_c = 0;
+    
+    for (int i = 0; i < r; i++) {
+        for (int j = 0; j < c; j++) {
+            scanf("%d", &m[i][j]);
+            if (i == 0 && j == 0) {
+                max = m[i][j];
+            } else if (m[i][j] > max) {
+                max = m[i][j];
+                max_r = i;
+                max_c = j;
+            }
+        }
+    }
+    
+    printf("%d %d %d\n", max, max_r, max_c);
+    
+    return 0;
+}
