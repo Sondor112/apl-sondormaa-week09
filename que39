@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    if (scanf("%d", &n) != 1) return 0;
+
+    int a[n];
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &a[i]);
+    }
+
+    int max_sum = a[0];
+
+    // Давхар давталтаар бүх залгаа хэсгүүдийн нийлбэрийг шалгах
+    for (int i = 0; i < n; i++) {
+        int current_sum = 0;
+        for (int j = i; j < n; j++) {
+            current_sum += a[j];
+            if (current_sum > max_sum) {
+                max_sum = current_sum;
+            }
+        }
+    }
+
+    printf("%d\n", max_sum);
+
+    return 0;
+}
